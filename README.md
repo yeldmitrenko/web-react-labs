@@ -9,7 +9,7 @@ Items list (see the link to wireframe of Catalog page above).
 - Use array.map() method for rendering your items list
 - Routing (switching between pages) should work now. 
 - Use react-router-dom library: 
-`https://reactrouter.com/web/guides/quick-start`
+[https://reactrouter.com/web/guides/quick-start]
 - All UI elements (buttons / select) should have corresponding 
   React components (PrimaryButton.jsx / Select.jsx  etc.)
 - Functionality (filter / search / view more) is still not required (you 
