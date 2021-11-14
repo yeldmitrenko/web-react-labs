@@ -3,10 +3,41 @@ import Hero from "../../icons/hero.jpg";
 import GoldCreekPond from "../../icons/GoldCreekPond.jpg";
 import AppenzellDistrict from "../../icons/AppenzellDistrict.jpg";
 import Uttarakhand from "../../icons/Uttarakhand.jpg";
-import { Item } from "../Item/Item";
 import { VoucherItems } from "../VoucherItems/VoucherItems";
+import { useState } from "react";
+import { HomeItem } from "../HomeItem/HomeItem";
 
 export const Home = () => {
+    const [viewMoreVouchers, toggle] = useState(false);
+    const [vouchers, showAllVouchers] = useState([
+        {
+            name: "Gold Creek Pond",
+            image: GoldCreekPond,
+
+        },
+        {
+            name: "Appenzell District",
+            image: AppenzellDistrict,
+        },
+        {
+            name: "Uttarakhand",
+            image: Uttarakhand,
+        }
+    ]);
+
+    function changeVouchers() {
+        if (!viewMoreVouchers) {
+            showAllVouchers(vouchers.concat(vouchers));
+        } else {
+            showAllVouchers(vouchers.slice(0, 3));
+        }
+    }
+
+    function toggleView() {
+        toggle(!viewMoreVouchers);
+        changeVouchers();
+    }
+
     return (
         <div>
             <HeroWrapper>
@@ -19,12 +50,10 @@ export const Home = () => {
 
             <ItemLabel>Propositions for you</ItemLabel>
             <ItemList>
-                <Item model={GoldCreekPond} name={"Gold Creek Pond"}/>
-                <Item model={AppenzellDistrict} name={"Appenzell District"}/>
-                <Item model={Uttarakhand} name={"Uttarakhand"}/>
+                {vouchers.map(voucher => (<HomeItem key={voucher.name.toString()} name = {voucher.name} image={voucher.image}/>))}
             </ItemList>
             
-            <Button>View more</Button>
+            <Button onClick={toggleView}>View more</Button>
 
             <InformWrapper>
                 <ItemLabel>About us</ItemLabel>

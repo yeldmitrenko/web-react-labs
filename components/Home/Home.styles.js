@@ -37,6 +37,7 @@ export const ItemLabel = styled.h3`
 export const ItemList = styled.div`
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 `
 
 export const Button = styled.button`

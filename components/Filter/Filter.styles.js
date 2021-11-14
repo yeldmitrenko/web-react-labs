@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const OuterWrapper = styled.div`
+    display: flex;
+    padding: 5px 80px;
+`
+
 export const Wrapper = styled.div`
     display: flex;
     padding: 5px 80px;
@@ -36,3 +41,4 @@ export const ApplyButton = styled.button`
 export const HorLine = styled.hr`
     margin-top: 0;
 `
+

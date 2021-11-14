@@ -7,27 +7,25 @@ import {BrowserRouter, Switch, Route,} from "react-router-dom";
 import { Filter } from "./components/Filter/Filter";
 
 function App() {
-  return (
-      <BrowserRouter>
-          <div>
-              <Switch>
-                  <Route exact path="/">
-                      <Header isHomePage={true}/>
-                      <Home/>
-                  </Route>
-                  <Route path="/catalog">
-                      <Header isHomePage={false}/>
-                      <Filter/>
-                      <Catalog/>
-                  </Route>
-                  <Route path="/cart">
-                      <Header isHomePage={true}/>
-                  </Route>
-              </Switch>
-              <Footer/>
-          </div>
-      </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <div>
+                <Switch>
+                    <Route exact path="/">
+                        <Header/>
+                        <Home/>
+                    </Route>
+                    <Route path="/catalog">
+                        <Catalog/>
+                    </Route>
+                    <Route path="/cart">
+                        <Header/>
+                    </Route>
+                </Switch>
+                <Footer/>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
