@@ -15,6 +15,7 @@ export const TextWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
+    flex-direction: column;
 `
 
 export const Image = styled.img`
