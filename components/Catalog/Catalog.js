@@ -7,7 +7,7 @@ import Algeria from "../../icons/Algeria.jpg";
 import { useEffect, useState } from 'react';
 import { Filter } from "../Filter/Filter";
 import axios from 'axios';
-import CircularProgress from 'react-cssfx-loading/lib/CircularProgress';
+import BarWave from 'react-cssfx-loading/lib/BarWave';
 import { Header } from "../Header/Header";
 import { ItemPage } from "../ItemPage/ItemPage";
 
@@ -15,7 +15,6 @@ import { ItemPage } from "../ItemPage/ItemPage";
 export function Catalog() {
     const [items, update] = useState(null);
     const [view, setView] = useState(null);
-
     useEffect(() => {
         axios.get(`http://localhost:8080/voucher`).then((response) => {
                 update(response.data)});
@@ -45,32 +44,30 @@ export function Catalog() {
     }
 
     function returnItems(items) {
-        function createImage() {
-            // if (name == "Gold Creek Pond") 
-            //     return GoldCreekPond;
-            // if (name == "Appenzell District")
-            //     return AppenzellDistrict;
-            // if (name == "Uttarakhand")
-            //     return Uttarakhand;
-            // if (name == "Algeria")
-            //     return Algeria;
-            return GoldCreekPond;
+        function createImage(name) {
+            if (name == "Gold Creek Pond") 
+                return GoldCreekPond;
+            if (name == "Appenzell District")
+                return AppenzellDistrict;
+            if (name == "Uttarakhand")
+                return Uttarakhand;
+            if (name == "Algeria")
+                return Algeria;
         }
 
         if (items)
             return <>
                 <Filter function={updateItems}/>
                 <Wrapper>
-                    {items.map(item => {
-                        <CatalogItem key={item.name} name={item.name} price={item.price}
-                            image={createImage(item.name)} text={item.description}
-                            function={toggleView}/>})}
+                    {items.map(item => (
+                        <CatalogItem key={item.name} image={createImage(item.name)} name={item.name} price={item.price} 
+                                    text={item.description} function={toggleView}/>))}
                 </Wrapper>
             </>
         return <>
             <Filter function={updateItems}/>
             <Wrapper style={{padding: "200px"}}>
-                <CircularProgress color="#000" width="100px" height="100px" duration="3s"/>
+                <BarWave color="#000" width="100px" height="100px" duration="3s"/>
             </Wrapper>
         </>
     }
