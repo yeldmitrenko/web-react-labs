@@ -1,8 +1,8 @@
 # React.js: Redux: Cart page (shopping cart)
-## Description: You are on your way to finishing this insane project... Create 
-the first of three cart pages - Shopping cart page.
+## Description: You are on your way to finishing this insane project... 
+Create the first of three cart pages - Shopping cart page.
 Also, here you meet one of the most popular React library - Redux.
-Variants -  (products that you are ‘selling’) the same as for previous works.
+#### Variants -  (products that you are ‘selling’) the same as for previous works.
 (see the description to 3rd work)
 ## Requirements: 
 - All of the requirements for previous React.js works should be kept.
@@ -19,7 +19,7 @@ kept in separate and specific files (actions.js / reducers.js /
 store.js etc.)
 - Use useSelector hook for getting the data from redux store 
 (instead of connect() function)
-(https://react-redux.js.org/api/hooks#)   useselector-examples   
+https://react-redux.js.org/api/hooks#   useselector-examples   
 - Use useDispatch hook for dispatching your actions (instead of 
 connect() function)
-(https://react-redux.js.org/api/hooks#) usedispatch   
+https://react-redux.js.org/api/hooks# usedispatch   
